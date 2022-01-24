@@ -1,5 +1,3 @@
-# rubocop:disable Style/OptionalBooleanParameter
-
 class Teacher < Person
   def initialize(specialization, age, name = 'Unknown')
     @specialization = specialization
@@ -10,5 +8,3 @@ class Teacher < Person
     true
   end
 end
-
-# rubocop:enable Style/OptionalBooleanParameter
