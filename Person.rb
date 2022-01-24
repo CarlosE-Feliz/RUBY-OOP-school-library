@@ -1,3 +1,5 @@
+# rubocop:disable Style/OptionalBooleanParameter
+
 # create class person
 class Person
   attr_reader :id
@@ -20,3 +22,6 @@ class Person
     @age >= 18
   end
 end
+
+
+# rubocop:enable Style/OptionalBooleanParameter

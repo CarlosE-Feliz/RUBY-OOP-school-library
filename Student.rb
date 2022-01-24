@@ -1,3 +1,5 @@
+# rubocop:disable Style/OptionalBooleanParameter
+
 class Student < Person
   def initialize(classroom, age, name = 'Unknown', parent_permision: true)
     @classroom = classroom
@@ -8,3 +10,6 @@ class Student < Person
     "¯\(ツ)/¯"
   end
 end
+
+
+# rubocop:enable Style/OptionalBooleanParameter
