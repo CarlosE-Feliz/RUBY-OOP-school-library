@@ -1,3 +1,4 @@
+# create class person
 class Person
   attr_reader :id
   attr_accessor :name, :age
