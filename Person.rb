@@ -1,5 +1,4 @@
 # create class person
-
 require './corrector'
 class Person < Corrector
   attr_reader :id
