@@ -1,5 +1,7 @@
 # create class person
-class Person
+require './corrector'
+require '/rental'
+class Person < Corrector
   attr_reader :id
   attr_accessor :name, :age
 
@@ -7,11 +9,21 @@ class Person
     @id = Random.rand(1..10_000)
     @name = name
     @age = age
+    @corrector = corrector.new
     @parent_permision = parent_permision
+    super(age)
   end
 
   def can_use_services?
     of_age? || @parent_permision
+  end
+
+  def validate_name
+    @name = @corrector.correct_name(@name)
+  end
+
+  def add_rental(date, book)
+    Rental.new(date, self, book)
   end
 
   private
