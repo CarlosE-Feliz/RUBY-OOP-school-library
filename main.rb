@@ -4,7 +4,6 @@ require './rental'
 require './student'
 require './teacher'
 require './book'
-# rubocop:disable all
 # Create class App
 class App
   def initialize
@@ -60,7 +59,7 @@ class App
       end
 
     @people << person
-    puts 'Person created'
+    puts 'Person created successfully'
   end
 
   # *Create a book.
@@ -74,9 +73,8 @@ class App
     author = gets.chomp
 
     @books << Book.new(title, author)
-    puts 'Book created'
+    puts 'Book created successfully'
   end
-
 
   def create_rental
     puts 'Select a book from the following list by number'
@@ -97,7 +95,7 @@ class App
 
     date = gets.chomp
 
-    @rentals << Rental.new(date, @people[person_index],  @books[book_index])
+    @rentals << Rental.new(date, @people[person_index], @books[book_index])
     puts 'Rental created successfully'
   end
 
@@ -148,4 +146,4 @@ def main
     puts "\n"
   end
 end
-main()
+main
