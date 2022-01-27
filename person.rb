@@ -1,6 +1,6 @@
 # create class person
 require './corrector'
-require '/rental'
+require './rental'
 class Person < Corrector
   attr_reader :id
   attr_accessor :name, :age
