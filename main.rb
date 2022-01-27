@@ -4,6 +4,7 @@ require './rental'
 require './student'
 require './teacher'
 require './book'
+# rubocop:disable all
 # Create class App
 class App
   def initialize
@@ -26,38 +27,27 @@ class App
 
   def create_person
     print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
-
     person_type = gets.chomp
     if person_type != '1' && person_type != '2'
       puts 'Invalid option'
       return
     end
-
     print 'Age: '
-
     age = gets.chomp
-
     print 'Name: '
-
     name = gets.chomp
-
     person =
       case person_type
       when '1'
         print 'Has parent permission? [Y/N]: '
-        # *If needed, ask for parameters for the option.
         parent_permission = gets.chomp
         parent_permission = parent_permission.downcase == 'y'
-
         Student.new(age, name, parent_permission)
       when '2'
         print 'Specialization: '
-
         specialization = gets.chomp
-
         Teacher.new(age, specialization, name)
       end
-
     @people << person
     puts 'Person created successfully'
   end
@@ -114,7 +104,6 @@ end
 
 def main
   app = App.new
-
   response = nil
   puts "Welcome to School Library App!\n\n"
   while response != '7'
