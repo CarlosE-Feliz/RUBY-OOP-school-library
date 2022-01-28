@@ -1,17 +1,16 @@
 # create class person
 require './corrector'
-require '/rental'
-class Person < Corrector
+require './rental'
+class Person
   attr_reader :id
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals
 
-  def initialize(age, name = 'Unknown', parent_permision: true)
+  def initialize(age, name = 'Unknown', parent_permission: true)
     @id = Random.rand(1..10_000)
     @name = name
     @age = age
-    @corrector = corrector.new
-    @parent_permision = parent_permision
-    super(age)
+    @corrector = Corrector.new
+    @parent_permission = parent_permission
   end
 
   def can_use_services?
